@@ -1,0 +1,9 @@
+/src/
+/*.json
+/!package.json
+/!package-lock.json
+/*.js
+/*.belamodel
+/*.tgz
+/*.md
+/!README.md

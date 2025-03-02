@@ -1,27 +1,28 @@
-# BELA
-What is BELA? Bela is any **artificial intelligence architecture** that uses binary as a representation of text and uses entropy, BELA itself stands for **Binary Entropy Learning Architecture**.
-## Can I use this architecture?
-Yes of course. You can use this architecture to create your own models.
+# BELA: Binary Entropy Learning Architecture for AI Models
+BELA is an AI architecture that represents text using binary and leverages entropy for learning.
+BELA itself stands for **Binary Entropy Learning Architecture**.
+## Who can use BELA?
+Anyone! Whether you're an AI researcher or just experimenting, you can use BELA to create your own models.
 ### How to install?
-To install this architecture you need Node.js 12 and above. If you already have the required Node.js, then you can run the following command:
+You can install BELA using npm with this command:
 ```sh
 npm install @soteen/bela
 ```
 ### What are the steps after installation?
-Once you have successfully installed this architecture, you can copy the following code template to create your model.
+Here's a quick setup to start training your own AI model with BELA.
 1. **config.json**:
 ```json
 {
   "parameter": {
-    "epochs": 20,
-    "learningRate": 0.05,
-    "nGramOrder": 5,
-    "layers": [256, 128, 64]
+    "epochs": 5, // Number of training iterations
+    "learningRate": 0.05, // Learning rate for optimization
+    "nGramOrder": 3, // Context window size for text processing
+    "layers": [64, 32, 16] // Neural network layer sizes
   },
   "path": {
-    "root": "./",
-    "model": "./models/",
-    "backup": "./backup/"
+    "root": "./", // Base directory
+    "model": "./models/", // Model storage path
+    "backup": "./backup/" // Backup directory
   }
 }
 ```
@@ -36,27 +37,29 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 /** Get the configuration from the config.json file */
-const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+const config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
 
 /** Initialize BELA with configuration from config.json file */
-const Coucou = new BELA(config);
+const model = new BELA(config);
 
 /** Get the data you want to use to train the model from dataset.json */
-const trainingData = JSON.parse(fs.readFileSync('dataset.json', 'utf8'));
+const trainingData = JSON.parse(fs.readFileSync("dataset.json", "utf8"));
 
 /** Train the model with data taken from dataset.json */
-Coucou.train(trainingData);
+model.train(trainingData);
 
 /** Get password from .env file */
 const password = process.env.PASSWORD;
 
 /** Save the trained model */
-for (let i = 0; i < 5; i++) {
-  if (password && password?.length === 32) {
-    Coucou.save('coucou.belamodel', password);
-    break;
-  }
-}
+model.save("model.belamodel", password);
+
+/** Load the trained model */
+model.load("model.belamodel", password);
+
+/** Make a prediction */
+const predict = model.predict("hello", { maxLength: 12 });
+console.log(predict);
 ```
 
 > **Caution**: We recommend that you store your configuration in a JSON file and your model password in a .env file.

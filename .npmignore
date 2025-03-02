@@ -2,7 +2,7 @@ src/
 *.json
 !package.json
 !package-lock.json
-*.js
+/*.js
 *.belamodel
 *.tgz
 *.md

@@ -6,6 +6,7 @@ import { calculateEntropy } from './calculateEntropy';
 import { calculateHammingDistance } from './calculateHammingDistance';
 import { isValidBinary } from './isValidBinary';
 import { getDistribution } from './getDistribution';
+import { getFullEnv } from './getFullEnv';
 
 export {
   encode,
@@ -15,5 +16,6 @@ export {
   calculateEntropy,
   calculateHammingDistance,
   isValidBinary,
-  getDistribution
+  getDistribution,
+  getFullEnv
 }

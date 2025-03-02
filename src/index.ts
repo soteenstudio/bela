@@ -47,28 +47,16 @@ export class BELA {
   pathModel?: string;
   pathBackup?: string;
 
-  constructor(config: Configuration) {
-    if (!config) {
-      this.epochs = 5;
-      this.learningRate = 0.05;
-      this.momentum = 0.9;
-      this.randomness = 0.05;
-      this.nGramOrder = 3;
-      this.layers = [64, 32, 16];
-      this.pathRoot = "./";
-      this.pathModel = "./";
-      this.pathBackup = "./";
-    } else {
-      this.epochs = config.parameter?.epochs ?? 5;
-      this.learningRate = config.parameter?.learningRate ?? 0.05;
-      this.momentum = config.parameter?.momentum ?? 0.9;
-      this.randomness = config.parameter?.randomness ?? 0.05;
-      this.nGramOrder = config.parameter?.nGramOrder ?? 3;
-      this.layers = config.parameter?.layers ?? [64, 32, 16];
-      this.pathRoot = config.path?.root ?? "./";
-      this.pathModel = config.path?.model ?? "./";
-      this.pathBackup = config.path?.backup ?? "./";
-    }
+  constructor(config: Configuration = {}) {
+    this.epochs = config.parameter?.epochs ?? 5;
+    this.learningRate = config.parameter?.learningRate ?? 0.05;
+    this.momentum = config.parameter?.momentum ?? 0.9;
+    this.randomness = config.parameter?.randomness ?? 0.05;
+    this.nGramOrder = config.parameter?.nGramOrder ?? 3;
+    this.layers = config.parameter?.layers ?? [64, 32, 16];
+    this.pathRoot = config.path?.root ?? "./";
+    this.pathModel = config.path?.model ?? "./";
+    this.pathBackup = config.path?.backup ?? "./";
     
     this.trainer = new PatternTrainer(this.learningRate, this.nGramOrder, this.momentum, this.layers);
     this.matching = new PatternMatching(this.trainer);
@@ -178,7 +166,7 @@ export class BELA {
       throw new Error('File names do not end in .belamodel.');
     }
     
-    this.manager.save(filename, key);
+    this.manager.save(filename, utils.getFullEnv(key));
   }
   
   load(filename: string, key: string): void {
@@ -186,7 +174,7 @@ export class BELA {
       throw new Error('File names do not end in .belamodel.');
     }
     
-    const parameters = this.manager.load(filename, key);
+    const parameters = this.manager.load(filename, utils.getFullEnv(key));
     this.epochs = parameters.epochs;
     this.learningRate = parameters.learningRate;
     this.momentum = parameters.momentum;

@@ -1,3 +1,11 @@
+![Node.js](https://img.shields.io/badge/Node.js-12%2B-green?logo=node.js&style=flat)  
+![License](https://img.shields.io/github/license/soteenstudio/bela?style=flat)  
+![Version](https://img.shields.io/npm/v/@soteen/bela?style=flat)  
+![npm](https://img.shields.io/npm/dt/@soteen/bela?style=flat)  
+![Repo Size](https://img.shields.io/github/repo-size/soteenstudio/bela?style=flat)  
+![GitHub contributors](https://img.shields.io/github/contributors/soteenstudio/bela?style=flat)  
+![GitHub Repo stars](https://img.shields.io/github/stars/soteenstudio/bela?style=flat)  
+![GitHub issues](https://img.shields.io/github/issues/soteenstudio/bela?style=flat)
 # BELA: Binary Entropy Learning Architecture for AI Models
 BELA is an AI architecture that represents text using binary and leverages entropy for learning.
 BELA itself stands for **Binary Entropy Learning Architecture**.

@@ -11,7 +11,7 @@ npm install @soteen/bela
 ### What are the steps after installation?
 Here's a quick setup to start training your own AI model with BELA.
 1. **config.json**:
-```json
+```json5
 {
   "parameter": {
     "epochs": 5, // Number of training iterations

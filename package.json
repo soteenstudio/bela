@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "typings": "types/index.d.ts",
   "scripts": {
-    "test": "ts-node src/index.ts",
+    "test": "clear && ts-node ./tests/test2.ts",
     "build": "clear && tsc"
   },
   "keywords": [
@@ -17,5 +17,8 @@
   "devDependencies": {
     "@types/node": "^22.13.4",
     "i": "^0.3.7"
+  },
+  "dependencies": {
+    "@soteen/bela": "file:soteen-bela-0.0.1.tgz"
   }
 }

@@ -5,26 +5,14 @@ import { PatternTrainer } from './PatternTrainer';
 import { PatternPredictor } from './PatternPredictor';
 import { PatternMatching } from './PatternMatching';
 import { ModelManager } from './ModelManager';
-
-interface ParameterConfig {
-  epochs?: number;
-  learningRate?: number;
-  momentum?: number;
-  randomness?: number;
-  nGramOrder?: number;
-  layers?: number[];
-}
-
-interface PathConfig {
-  root?: string;
-  model?: string;
-  backup?: string;
-}
-
-interface Configuration {
-  parameter?: ParameterConfig;
-  path?: PathConfig;
-}
+import {
+  Parameter,
+  Path,
+  Configuration,
+  Option,
+  Dataset,
+  ModelData
+} from './types/types';
 
 export class BELA {
   private packageRoot: string = path.dirname(require.main?.filename || process.cwd());
@@ -76,7 +64,21 @@ export class BELA {
     );
   }
 
-  train(dataset: { input: string; output: string }[]): void {
+  train(dataset: Dataset[]): void {
+    if (this.epochs) {
+      for (let epoch = 0; epoch < this.epochs; epoch++) {
+        dataset.forEach(({ input, output }) => {
+          this.trainer.learnSentence(input);
+          this.trainer.learnBinary(utils.wordToBinary(input), utils.wordToBinary(output));
+        });
+        console.log(`Epoch ${epoch + 1} is complete.`);
+      }
+    }
+  }
+  
+  fineTune(dataset: Dataset[]): void {
+    const modelData1 = this.manager.currentModel;
+    
     if (this.epochs) {
       for (let epoch = 0; epoch < this.epochs; epoch++) {
         dataset.forEach(({ input, output }) => {
@@ -88,10 +90,9 @@ export class BELA {
     }
   }
 
-  info(options: {
-    option: 'parameter',
-  }): object {
-    if (options.option && options.option === 'parameter') {
+  info(options: Option = {}): Parameter | ModelData | object {
+    console.log(options.parameter);
+    if (options.parameter && options.parameter === true) {
       return {
         epochs: this.epochs,
         learningRate: this.learningRate,
@@ -100,7 +101,7 @@ export class BELA {
         nGramOrder: this.nGramOrder,
         layers: this.layers,
       };
-    } else if (options.option && options.option === 'training') {
+    } else if (options.training && options.training === true) {
       const nextWordsInfo: object[] = [];
       const binaryPatternsInfo: object[] = [];
       const frequentlyPatternsInfo: object[] = [];
@@ -174,12 +175,12 @@ export class BELA {
       throw new Error('File names do not end in .belamodel.');
     }
     
-    const parameters = this.manager.load(filename, utils.getFullEnv(key));
-    this.epochs = parameters.epochs;
-    this.learningRate = parameters.learningRate;
-    this.momentum = parameters.momentum;
-    this.randomness = parameters.randomness;
-    this.nGramOrder = parameters.nGramOrder;
-    this.layers = parameters.layers;
+    const data = this.manager.load(filename, utils.getFullEnv(key));
+    this.epochs = data.parameters.epochs;
+    this.learningRate = data.parameters.learningRate;
+    this.momentum = data.parameters.momentum;
+    this.randomness = data.parameters.randomness;
+    this.nGramOrder = data.parameters.nGramOrder;
+    this.layers = data.parameters.layers;
   }
 }

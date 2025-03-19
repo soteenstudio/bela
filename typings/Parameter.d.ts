@@ -1,4 +1,4 @@
-export interface Parameter {
+declare interface Parameter {
   epochs?: number;
   learningRate?: number;
   momentum?: number;

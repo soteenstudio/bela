@@ -15,7 +15,7 @@ function base64(text: string): string {
   return Buffer.from(text).toString('base64');
 }
 
-export function encode(json: object, key: string): string {
+export function lock(json: object, key: string): string {
   KEY = key;
   
   let encoded: string = encrypt(JSON.stringify(json));

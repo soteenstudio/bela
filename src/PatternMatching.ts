@@ -1,5 +1,5 @@
 import { PatternTrainer } from './PatternTrainer';
-import * as utils from './utils/utils';
+import * as utils from './utils';
 
 export class PatternMatching {
   private synonymMap: Map<string, string[]> = new Map([

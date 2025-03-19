@@ -1,21 +1,14 @@
-import * as utils from './utils/utils';
+import * as utils from './utils';
 import * as fs from 'fs';
 import * as path from 'path'
 import { PatternTrainer } from './PatternTrainer';
 import { PatternPredictor } from './PatternPredictor';
 import { PatternMatching } from './PatternMatching';
 import { ModelManager } from './ModelManager';
-import {
-  Parameter,
-  Path,
-  Configuration,
-  Option,
-  Dataset,
-  ModelData
-} from './types/types';
+import { BELAMessage } from './utils/belaMessage';
 
 export class BELA {
-  private packageRoot: string = path.dirname(require.main?.filename || process.cwd());
+  private packageRoot: string = require.main?.filename ?? process.cwd();
   private trainer: PatternTrainer;
   private matching: PatternMatching;
   private predictor: PatternPredictor;
@@ -25,15 +18,18 @@ export class BELA {
     ["teknologi", ["AI", "robot", "machine learning"]],
   ]);
   
-  epochs?: number;
-  learningRate?: number;
-  momentum?: number;
-  randomness?: number;
-  nGramOrder?: number;
-  layers?: number[];
-  pathRoot?: string;
-  pathModel?: string;
-  pathBackup?: string;
+  private epochs?: number;
+  private learningRate?: number;
+  private momentum?: number;
+  private randomness?: number;
+  private nGramOrder?: number;
+  private layers?: number[];
+  private pathRoot?: string;
+  private pathModel?: string;
+  private pathBackup?: string;
+  private autoIncrement?: boolean;
+  private autoDelete?: boolean;
+  private autoDeleteMax?: number;
 
   constructor(config: Configuration = {}) {
     this.epochs = config.parameter?.epochs ?? 5;
@@ -45,6 +41,9 @@ export class BELA {
     this.pathRoot = config.path?.root ?? "./";
     this.pathModel = config.path?.model ?? "./";
     this.pathBackup = config.path?.backup ?? "./";
+    this.autoIncrement = config?.autoIncrement ?? true;
+    this.autoDelete = config?.autoDelete ?? true;
+    this.autoDeleteMax = config?.autoDeleteMax ?? 10;
     
     this.trainer = new PatternTrainer(this.learningRate, this.nGramOrder, this.momentum, this.layers);
     this.matching = new PatternMatching(this.trainer);
@@ -163,24 +162,75 @@ export class BELA {
   }
   
   save(filename: string, key: string): void {
-    if (!filename.endsWith('.belamodel')) {
-      throw new Error('File names do not end in .belamodel.');
+    if (!filename) {
+      BELAMessage.say({
+        type: "error",
+        code: 400,
+        name: "BELA",
+        message: "File name cannot be empty."
+      });
     }
     
-    this.manager.save(filename, utils.getFullEnv(key));
+    if (!key) {
+      BELAMessage.say({
+        type: "error",
+        code: 400,
+        name: "BELA",
+        message: "Key cannot be empty."
+      });
+    }
+    
+    if (this.autoIncrement === false && !filename.endsWith('.belamodel')) {
+      BELAMessage.say({
+        type: "error",
+        code: 415,
+        name: "BELA",
+        message: "File names do not end in .belamodel."
+      });
+    }
+    
+    if (this.autoDelete) {
+      this.manager.save(filename, utils.getFullEnv(key), this.autoDeleteMax ?? 10, true);
+      return;
+    }
+    
+    this.manager.save(filename, utils.getFullEnv(key), this.autoDeleteMax ?? 10, false);
   }
   
   load(filename: string, key: string): void {
-    if (!filename.endsWith('.belamodel')) {
-      throw new Error('File names do not end in .belamodel.');
+    if (!filename) {
+      BELAMessage.say({
+        type: "error",
+        code: 400,
+        name: "BELA",
+        message: "File name cannot be empty."
+      });
+    }
+    
+    if (!key) {
+      BELAMessage.say({
+        type: "error",
+        code: 400,
+        name: "BELA",
+        message: "Key cannot be empty."
+      });
+    }
+    
+    if (this.autoIncrement === false && !filename.endsWith('.belamodel')) {
+      BELAMessage.say({
+        type: "error",
+        code: 415,
+        name: "BELA",
+        message: "File names do not end in .belamodel."
+      });
     }
     
     const data = this.manager.load(filename, utils.getFullEnv(key));
-    this.epochs = data.parameters.epochs;
-    this.learningRate = data.parameters.learningRate;
-    this.momentum = data.parameters.momentum;
-    this.randomness = data.parameters.randomness;
-    this.nGramOrder = data.parameters.nGramOrder;
-    this.layers = data.parameters.layers;
+    this.epochs = data?.parameters.epochs;
+    this.learningRate = data?.parameters.learningRate;
+    this.momentum = data?.parameters.momentum;
+    this.randomness = data?.parameters.randomness;
+    this.nGramOrder = data?.parameters.nGramOrder;
+    this.layers = data?.parameters.layers;
   }
 }

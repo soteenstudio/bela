@@ -1,4 +1,4 @@
-import * as utils from './utils/utils';
+import * as utils from './utils';
 
 export class PatternTrainer {
   public nGramPatterns: Map<string, Map<string, number>> = new Map();

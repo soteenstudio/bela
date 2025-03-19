@@ -1,6 +1,6 @@
 import { PatternTrainer } from './PatternTrainer';
 import { PatternMatching } from './PatternMatching';
-import * as utils from './utils/utils';
+import * as utils from './utils';
 
 export class PatternPredictor {
   constructor(

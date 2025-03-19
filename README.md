@@ -34,15 +34,18 @@ Here's a quick setup to start training your own AI model with BELA.
     "root": "./", // Base directory
     "model": "./models/", // Model storage path
     "backup": "./backup/" // Backup directory
-  }
+  },
+  "autoIncrement": true,
+  "autoDelete": true,
+  "autoDeleteMax": 2,
 }
 ```
 2. **index.js**:
 ```javascript
 /** Import all required modules */
 import { BELA } from '@soteen/bela';
-import * as fs from 'fs';
-import * as dotenv from 'dotenv';
+import fs from 'fs';
+import dotenv from 'dotenv';
 
 /** Set dotenv module */
 dotenv.config();

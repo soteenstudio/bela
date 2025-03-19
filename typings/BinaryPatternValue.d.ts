@@ -1,4 +1,4 @@
-export interface BinaryPatternValue {
+declare interface BinaryPatternValue {
   distribution: { [key: string]: number }; 
   frequency: number; 
   output: string;

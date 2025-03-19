@@ -1,16 +1,17 @@
 {
   "name": "@soteen/bela",
-  "version": "0.0.1",
+  "version": "0.0.3-dev",
   "description": "This is machine learning using BELA.",
   "main": "dist/index.js",
-  "typings": "types/index.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "test": "clear && ts-node ./tests/test2.ts",
-    "build": "clear && tsc"
+    "build": "clear && tsc && node ./tests/model.js"
   },
   "keywords": [
     "machine",
-    "learning"
+    "learning",
+    "bela"
   ],
   "author": "SoTeen Studio",
   "license": "MIT",
@@ -19,6 +20,6 @@
     "i": "^0.3.7"
   },
   "dependencies": {
-    "@soteen/bela": "file:soteen-bela-0.0.1.tgz"
+    "chalk": "^5.4.1"
   }
 }

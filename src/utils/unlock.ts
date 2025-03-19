@@ -24,7 +24,7 @@ function base64(encodedText: string): string {
   return Buffer.from(encodedText, 'base64').toString('utf8');
 }
 
-export function decode(encodedText: string, key: string): {
+export function unlock(encodedText: string, key: string): {
   parameters: {
     epochs: number,
     learningRate: number,

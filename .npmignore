@@ -1,8 +1,10 @@
 src/
+/tests/
 *.json
 !package.json
 !package-lock.json
 /*.js
+*.map
 *.belamodel
 *.tgz
 *.md

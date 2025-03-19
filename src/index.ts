@@ -8,7 +8,7 @@ import { ModelManager } from './ModelManager';
 import { BELAMessage } from './utils/belaMessage';
 
 export class BELA {
-  private packageRoot: string = require.main?.filename ?? process.cwd();
+  private packageRoot: string = path.dirname(require.main?.filename ?? process.cwd());
   private trainer: PatternTrainer;
   private matching: PatternMatching;
   private predictor: PatternPredictor;

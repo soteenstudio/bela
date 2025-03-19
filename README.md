@@ -40,7 +40,14 @@ Here's a quick setup to start training your own AI model with BELA.
   "autoDeleteMax": 2,
 }
 ```
-2. **index.js**:
+2. **dataset.json**:
+```json5
+[
+  { "input": "Hey, how are you?", "output": "I'm fine, thank you?"},
+  { "input": "Tell me about the story", "output": "Sure! I'll tell you about the story" }
+]
+```
+3. **index.js**:
 ```javascript
 /** Import all required modules */
 import { BELA } from '@soteen/bela';

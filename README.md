@@ -140,4 +140,4 @@ From version to version, BELA has installation differences that we can see in th
 | 0.0.4-dev |        | 5s          |
 | 0.0.3-dev | 112kB  | 4-8s        |
 | 0.0.2-dev | 83.1kB | 4-8s        |
-| 0.0.1-dev |        | 4-8s        |
+| 0.0.1-dev | 83.1kB | 4-8s        |

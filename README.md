@@ -22,110 +22,113 @@ npm install @soteen/bela
 ### What are the steps after installation?
 Here's a quick setup to start training your own AI model with BELA.
 1. **Creating a configuration**:
-You need a configuration to configure the model you want to create.
-```json5
-{
-  "parameter": {
-    "epochs": 5, // Number of training iterations
-    "learningRate": 0.05, // Learning rate for optimization
-    "nGramOrder": 3, // Context window size for text processing
-    "layers": [64, 32, 16] // Neural network layer sizes
-  },
-  "path": {
-    "root": "./", // Base directory
-    "model": "./models/", // Model storage path
-    "backup": "./backup/" // Backup directory
-  },
-  "autoIncrement": true, 
-  "autoDelete": true,
-  "autoDeleteMax": 2,
-}
-```
+
+    You need a configuration to configure the model you want to create.
+    ```json5
+    {
+      "parameter": {
+        "epochs": 5, // Number of training iterations
+        "learningRate": 0.05, // Learning rate for optimization
+        "nGramOrder": 3, // Context window size for text processing
+        "layers": [64, 32, 16] // Neural network layer sizes
+      },
+      "path": {
+        "root": "./", // Base directory
+        "model": "./models/", // Model storage path
+        "backup": "./backup/" // Backup directory
+      },
+      "autoIncrement": true, 
+      "autoDelete": true,
+      "autoDeleteMax": 2,
+    }
+    ```
 2. **Creating a dataset**:
-Before proceeding to the next step, you need to create a dataset as follows.
-```json5
-[
-  { "input": "Hey, how are you?", "output": "I'm fine, thank you?"},
-  { "input": "Tell me about the story", "output": "Sure! I'll tell you about the story" }
-]
-```
+
+    Before proceeding to the next step, you need to create a dataset as follows.
+    ```json5
+    [
+      { "input": "Hey, how are you?", "output": "I'm fine, thank you?"},
+      { "input": "Tell me about the story", "output": "Sure! I'll tell you about the story" }
+    ]
+    ```
 3. **Use the code examples**:
-After installing, creating configurations, and creating datasets. You can run the following codes.
-    3.1. Import ``@soteen/bela`` to the project:
-    ```javascript
-    import { BELA } from '@soteen/bela';
-    ```
-    3.2. Initialize BELA with the configuration:
-    ```javascript
-    const model = new BELA(config);
-    ```
-    3.3. Train the model with the dataset:
-    ```javascript
-    model.train(trainingData);
-    ```
-    3.4. Save the trained model:
-    ```javascript
-    /** No auto-increment */
-    model.save("model.belamodel", {
-      password: password
-    });
-    
-    /** With auto-increment */
-    model.save("model", {
-      password: password
-    });
-    ```
-    3.5. Load the trained model:
-    ```javascript
-    /** No auto-increment */
-    model.load("model.belamodel", {
-      password: password
-    });
-    
-    /** With auto-increment */
-    model.load("model", {
-      password: password
-    });
-    ```
-    3.6. Move model to new/other file:
-    ```javascript
-    /** No auto-increment */
-    model.move("old-model.belamodel", {
-      password: oldPassword
-    },
-    "new-model.belamodel", {
-      password: newPassword
-    });
-    
-    /** With auto-increment */
-    model.move("old-model", {
-      password: oldPassword
-    },
-    "new-model", {
-      password: newPassword
-    });
-    ```
-    3.7. Read the contents of the ``.belamodel`` file:
-    ```javascript
-    /** No auto-increment */
-    console.log(model.read("model.belamodel", {
-      password: password
-    }));
-    
-    /** With auto-increment */
-    console.log(model.read("model", {
-      password: password
-    }));
-    ```
-    3.8. Make a prediction:
-    ```javascript
-    const predict = model.predict("Say this is example code.", {
-      maxLength: 12,
-      maxTest: 5,
-      logTest: true
-    });
-    
-    console.log(predict);
-    ```
+
+    After installing, creating configurations, and creating datasets. You can run the following codes.
+      3.1. Import ``@soteen/bela`` to the project:
+      ```javascript
+      import { BELA } from '@soteen/bela';
+      ```
+      3.2. Initialize BELA with the configuration:
+      ```javascript
+      const model = new BELA(config);
+      ```
+      3.3. Train the model with the dataset:
+      ```javascript
+      model.train(trainingData);
+      ```
+      3.4. Save the trained model:
+      ```javascript
+      /** No auto-increment */
+      model.save("model.belamodel", {
+        password: password
+      });
+      
+      /** With auto-increment */
+      model.save("model", {
+        password: password
+      });
+      ```
+      3.5. Load the trained model:
+      ```javascript
+      /** No auto-increment */
+      model.load("model.belamodel", {
+        password: password
+      });
+      
+      /** With auto-increment */
+      model.load("model", {
+        password: password
+      });
+      ```
+      3.6. Move model to new/other file:
+      ```javascript
+      /** No auto-increment */
+      model.move("old-model.belamodel", {
+        password: oldPassword
+      },
+      "new-model.belamodel", {
+        password: newPassword
+      });
+      
+      /** With auto-increment */
+      model.move("old-model", {
+        password: oldPassword
+      },
+      "new-model", {
+        password: newPassword
+      });
+      ```
+      3.7. Read the contents of the ``.belamodel`` file:
+      ```javascript
+      /** No auto-increment */
+      console.log(model.read("model.belamodel", {
+        password: password
+      }));
+      
+      /** With auto-increment */
+      console.log(model.read("model", {
+        password: password
+      }));
+      ```
+      3.8. Make a prediction:
+      ```javascript
+      const predict = model.predict("Say this is example code.", {
+        maxLength: 12,
+        maxTest: 5,
+        logTest: true
+      });
+      
+      console.log(predict);
+      ```
 
 > **Caution**: We recommend that you store your configuration in a JSON file and your model password in a .env file.

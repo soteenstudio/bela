@@ -37,9 +37,9 @@ Here's a quick setup to start training your own AI model with BELA.
         "model": "./models/", // Model storage path
         "backup": "./backup/" // Backup directory
       },
-      "autoIncrement": true, 
-      "autoDelete": true,
-      "autoDeleteMax": 2,
+      "autoIncrement": true, // Automatic upgrade
+      "autoDelete": true, // Delete old versions automatically
+      "autoDeleteMax": 2, // Number of versions stored, oldest will be deleted
     }
     ```
 2. **Creating a dataset**:

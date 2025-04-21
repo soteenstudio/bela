@@ -1,12 +1,24 @@
 {
   "name": "@soteen/bela",
-  "version": "0.0.3-dev",
+  "version": "0.0.4-dev",
   "description": "This is machine learning using BELA.",
-  "main": "dist/index.js",
-  "typings": "typings/index.d.ts",
+  "type": "module",
+  "main": "./build/index.min.cjs",
+  "module": "./build/index.min.mjs",
+  "exports": {
+    ".": {
+      "require": "./build/index.min.cjs",
+      "import": "./build/index.min.mjs"
+    }
+  },
+  "typings": "build/typings.d.ts",
   "scripts": {
-    "test": "clear && ts-node ./tests/test2.ts",
-    "build": "clear && tsc && node ./tests/model.js"
+    "build": "npm run build:compile && npm run build:bundling-esm && npm run build:bundling-cjs",
+    "build:compile": "tsc",
+    "build:bundling-esm": "esbuild dist/index.js --bundle --minify --platform=node --format=esm --outfile=build/index.min.mjs",
+    "build:bundling-cjs": "esbuild dist/index.js --bundle --minify --platform=node --format=cjs --outfile=build/index.min.cjs",
+    "test1": "clear && ts-node ./tests/test2.ts",
+    "test2": "clear && node ./tests/model.js"
   },
   "keywords": [
     "machine",
@@ -17,6 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.13.4",
+    "dotenv": "^16.5.0",
     "i": "^0.3.7"
   },
   "dependencies": {

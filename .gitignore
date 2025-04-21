@@ -1,3 +1,4 @@
+build/
 dist/
 tests/
 node_modules/
@@ -8,3 +9,4 @@ node_modules/
 *.js
 *.belamodel
 *.tgz
+.env

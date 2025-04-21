@@ -1,5 +1,7 @@
 src/
-/tests/
+dist/
+typings/
+tests/
 *.json
 !package.json
 !package-lock.json
@@ -9,3 +11,4 @@ src/
 *.tgz
 *.md
 !README.md
+.env

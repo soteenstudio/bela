@@ -3,10 +3,12 @@ declare class BELA {
   constructor(config: Configuration = {}) {}
   
   train(dataset: Dataset[]): void {}
-  info(options: Option = {}): Parameter | ModelData | object {}
-  predict(question: string, maxLength: number): string {}
-  save(filename: string, key: string): void {}
-  load(filename: string, key: string): void {}
+  fineTune(dataset: Dataset[]): void {}
+  predict(question: string, options: PredictOption): string {}
+  save(name: string, options: SaveOption): void {}
+  load(name: string, options: LoadOption): void {}
+  move(from: string, fromOptions: FromOption, to: string, toOptions: ToOption): void {}
+  read(name: string, options: ReadOption): ModelData {}
 }
 export = BELA;
 export { BELA };

@@ -1,7 +1,8 @@
 declare interface MessageConfig {
-  type: "success" | "error";
-  code: 200 | 201 | 204 | 400 | 403 | 404 | 415;
+  type: "success" | "error" | "epoch" | "test" | "other_warning";
+  code: string | number;
   name: string;
+  version?: string;
   message: string;
   stack?: string;
 }

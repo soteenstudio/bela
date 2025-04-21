@@ -12,6 +12,7 @@ import { deleteBelamodel } from './deleteBelamodel';
 import { getLatestBelamodel } from './getLatestBelamodel';
 import { getModelNumber } from './getModelNumber';
 import { findSimilarFile } from './findSimilarFile';
+import { question } from './question';
 
 export {
   lock,
@@ -27,5 +28,6 @@ export {
   deleteBelamodel,
   getLatestBelamodel,
   getModelNumber,
-  findSimilarFile
+  findSimilarFile,
+  question
 }

@@ -1,3 +1,5 @@
+import { Type, Code, BELAMessage } from "./belaMessage";
+
 export function getFullEnv(key: string): string {
   const maxRetries: number = 5;
   for (let i = 0; i < maxRetries; i++) {
@@ -5,5 +7,10 @@ export function getFullEnv(key: string): string {
       return key;
     }
   }
-  throw new Error(`Password length must be 32, but got ${key?.length}.`)
+  throw BELAMessage.say({
+    type: Type.ERROR,
+    code: Code.GENERAL_NOT_FULFILLED,
+    name: "BELA",
+    message: `Password length must be 32, but got ${key?.length}.`
+  });
 }

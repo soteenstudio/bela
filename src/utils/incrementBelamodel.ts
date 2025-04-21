@@ -3,11 +3,11 @@ import * as path from 'path';
 import * as utils from "./";
 
 export function incrementBelamodel(
-    dirPath: string,
-    modelName: string,
-    newData: ModelData,
-    key: string
-  ): string {
+  dirPath: string,
+  modelName: string,
+  newData: ModelData,
+  key: string
+): string {
     const files = fs.readdirSync(dirPath);
     const regex: RegExp = new RegExp(`^${modelName}-(\\d+)\\.belamodel$`);
     let maxNumber: number = 0;

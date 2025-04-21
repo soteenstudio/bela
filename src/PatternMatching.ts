@@ -14,7 +14,10 @@ export class PatternMatching {
     let closestDistance = Infinity;
 
     for (let [binary] of this.trainer.binaryPatterns) {
-      const distance = utils.calculateHammingDistance(inputBinary, binary);
+      const distance = utils.calculateHammingDistance(
+        inputBinary,
+        binary
+      );
       if (distance < closestDistance) {
         closestDistance = distance;
         closestPattern = binary;
@@ -33,7 +36,10 @@ export class PatternMatching {
       let minDistance = Infinity;
   
       for (let word of this.trainer.learnedPatterns.keys()) {
-          const distance = utils.calculateHammingDistance(utils.wordToBinary(inputWord), utils.wordToBinary(word));
+          const distance = utils.calculateHammingDistance(
+            utils.wordToBinary(inputWord),
+            utils.wordToBinary(word)
+          );
           if (distance < minDistance) {
               minDistance = distance;
               closestWord = word;

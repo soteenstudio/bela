@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": ["es5", "es6", "es7"],
-    "module": "commonjs",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "rootDir": "./src",
     "typeRoots": ["./typings", "./node_modules/@types"],
     "sourceMap": true,

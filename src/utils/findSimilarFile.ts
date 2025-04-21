@@ -31,12 +31,14 @@ function cleanFileName(fileName: string): string {
 /**
  * Mencari file yang paling mirip di folder tertentu
  */
-export function findSimilarFile(folder: string, inputName: string, maxDistance = 3): string | null {
+export function findSimilarFile(folder: string, inputName: string): string | null {
   const files = fs.readdirSync(folder);
   let bestMatch = { file: null as string | null, distance: Infinity };
 
   // Bersihkan inputName juga
   const cleanedInput = cleanFileName(inputName);
+  
+  const maxDistance = Math.max(1, Math.min(5, Math.floor(cleanedInput.length * 0.2)));
 
   for (const file of files) {
     const cleanedFile = cleanFileName(file); // Hilangkan bagian "-XXX.belamodel"

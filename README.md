@@ -52,82 +52,84 @@ Here's a quick setup to start training your own AI model with BELA.
     ]
     ```
 3. **Use the code examples**:
+
     After installing, creating configurations, and creating datasets. You can run the following codes.
-        3.1. Import ``@soteen/bela`` to the project:
-        ```javascript
-        import { BELA } from '@soteen/bela';
-        ```
-        3.2. Initialize BELA with the configuration:
-        ```javascript
-        const model = new BELA(config);
-        ```
-        3.3. Train the model with the dataset:
-        ```javascript
-        model.train(trainingData);
-        ```
-        3.4. Save the trained model:
-        ```javascript
-        /** No auto-increment */
-        model.save("model.belamodel", {
-          password: password
-        });
-        
-        /** With auto-increment */
-        model.save("model", {
-          password: password
-        });
-        ```
-        3.5. Load the trained model:
-        ```javascript
-        /** No auto-increment */
-        model.load("model.belamodel", {
-          password: password
-        });
-        
-        /** With auto-increment */
-        model.load("model", {
-          password: password
-        });
-        ```
-        3.6. Move model to new/other file:
-        ```javascript
-        /** No auto-increment */
-        model.move("old-model.belamodel", {
-          password: oldPassword
-        },
-        "new-model.belamodel", {
-          password: newPassword
-        });
-        
-        /** With auto-increment */
-        model.move("old-model", {
-          password: oldPassword
-        },
-        "new-model", {
-          password: newPassword
-        });
-        ```
-        3.7. Read the contents of the ``.belamodel`` file:
-        ```javascript
-        /** No auto-increment */
-        console.log(model.read("model.belamodel", {
-          password: password
-        }));
-        
-        /** With auto-increment */
-        console.log(model.read("model", {
-          password: password
-        }));
-        ```
-        3.8. Make a prediction:
-        ```javascript
-        const predict = model.predict("Say this is example code.", {
-          maxLength: 12,
-          maxTest: 5,
-          logTest: true
-        });
-        
-        console.log(predict);
-        ```
+    
+      3.1. Import ``@soteen/bela`` to the project:
+      ```javascript
+      import { BELA } from '@soteen/bela';
+      ```
+      3.2. Initialize BELA with the configuration:
+      ```javascript
+      const model = new BELA(config);
+      ```
+      3.3. Train the model with the dataset:
+      ```javascript
+      model.train(trainingData);
+      ```
+      3.4. Save the trained model:
+      ```javascript
+      /** No auto-increment */
+      model.save("model.belamodel", {
+        password: password
+      });
+      
+      /** With auto-increment */
+      model.save("model", {
+        password: password
+      });
+      ```
+      3.5. Load the trained model:
+      ```javascript
+      /** No auto-increment */
+      model.load("model.belamodel", {
+        password: password
+      });
+      
+      /** With auto-increment */
+      model.load("model", {
+        password: password
+      });
+      ```
+      3.6. Move model to new/other file:
+      ```javascript
+      /** No auto-increment */
+      model.move("old-model.belamodel", {
+        password: oldPassword
+      },
+      "new-model.belamodel", {
+        password: newPassword
+      });
+      
+      /** With auto-increment */
+      model.move("old-model", {
+        password: oldPassword
+      },
+      "new-model", {
+        password: newPassword
+      });
+      ```
+      3.7. Read the contents of the ``.belamodel`` file:
+      ```javascript
+      /** No auto-increment */
+      console.log(model.read("model.belamodel", {
+        password: password
+      }));
+      
+      /** With auto-increment */
+      console.log(model.read("model", {
+        password: password
+      }));
+      ```
+      3.8. Make a prediction:
+      ```javascript
+      const predict = model.predict("Say this is example code.", {
+        maxLength: 12,
+        maxTest: 5,
+        logTest: true
+      });
+      
+      console.log(predict);
+      ```
 
 > **Caution**: We recommend that you store your configuration in a JSON file and your model password in a .env file.

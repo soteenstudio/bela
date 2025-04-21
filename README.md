@@ -15,7 +15,7 @@ BELA itself stands for **Binary Entropy Learning Architecture**.
 ## Who can use BELA?
 Anyone! Whether you're an AI researcher or just experimenting, you can use BELA to create your own models.
 ### How to install?
-You can install BELA using npm with this command:
+You can install BELA using npm with this command.
 ```sh
 npm install @soteen/bela
 ```
@@ -132,3 +132,10 @@ After installing, creating configurations, and creating datasets. You can run th
     ```
 
 > **Caution**: We recommend that you store your configuration in a JSON file and your model password in a .env file.
+
+## How is the installation performance?
+From version to version, BELA has installation differences that we can see in the following table.
+| Version | Performance |
+|
+|---------|-------------|
+| 0.0.4-dev | 5s |

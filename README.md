@@ -135,9 +135,9 @@ After installing, creating configurations, and creating datasets. You can run th
 
 ## How is the installation performance?
 From version to version, BELA has installation differences that we can see in the following table.
-| Version    | Size    | Performance |
-|------------|---------|-------------|
-| v0.0.4-dev | 64.62kB | 5s          |
+| Version    | Size    | Performance | Optimizations performed |
+|------------|---------|-------------|-------------------------|
+| v0.0.4-dev | 64.62kB | 5s          | Build and minify using esbuild |
 | v0.0.3-dev | 69.25kB | 4-8s        |
 | v0.0.2-dev | 83.09kB | 4-8s        |
 | v0.0.1-dev | 83.16kB | 4-8s        |

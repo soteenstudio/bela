@@ -53,19 +53,19 @@ Here's a quick setup to start training your own AI model with BELA.
     ```
 3. **Use the code examples**:  
 After installing, creating configurations, and creating datasets. You can run the following codes.  
-    - **Import** ``@soteen/bela`` **to the project**:
+    3.1. **Import** ``@soteen/bela`` **to the project**:
     ```javascript
     import { BELA } from '@soteen/bela';
     ```
-    - Initialize BELA with the configuration:
+    3.2. Initialize BELA with the configuration:
     ```javascript
     const model = new BELA(config);
     ```
-    3. Train the model with the dataset:
+    3.3. Train the model with the dataset:
     ```javascript
     model.train(trainingData);
     ```
-    4. Save the trained model:
+    3.4. Save the trained model:
     ```javascript
     /** No auto-increment */
     model.save("model.belamodel", {
@@ -77,7 +77,7 @@ After installing, creating configurations, and creating datasets. You can run th
       password: password
     });
     ```
-    5. Load the trained model:
+    3.5. Load the trained model:
     ```javascript
     /** No auto-increment */
     model.load("model.belamodel", {
@@ -89,7 +89,7 @@ After installing, creating configurations, and creating datasets. You can run th
       password: password
     });
     ```
-    6. Move model to new/other file:
+    3.6. Move model to new/other file:
     ```javascript
     /** No auto-increment */
     model.move("old-model.belamodel", {
@@ -107,7 +107,7 @@ After installing, creating configurations, and creating datasets. You can run th
       password: newPassword
     });
     ```
-    7. Read the contents of the ``.belamodel`` file:
+    3.7. Read the contents of the ``.belamodel`` file:
     ```javascript
     /** No auto-increment */
     console.log(model.read("model.belamodel", {
@@ -119,7 +119,7 @@ After installing, creating configurations, and creating datasets. You can run th
       password: password
     }));
     ```
-    8. Make a prediction:
+    3.8. Make a prediction:
     ```javascript
     const predict = model.predict("Say this is example code.", {
       maxLength: 12,

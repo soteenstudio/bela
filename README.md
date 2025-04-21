@@ -138,4 +138,5 @@ From version to version, BELA has installation differences that we can see in th
 | Version   | Performance |
 |-----------|-------------|
 | 0.0.4-dev | 5s          |
+|-----------|-------------|
 | 0.0.3-dev | 4-8s        |

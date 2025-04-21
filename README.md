@@ -143,3 +143,4 @@ From version to version, BELA has installation differences that we can see in th
 | v0.0.1-dev | 83.16kB | 4-8s        | Nothing |
 
 This data is obtained by extracting the .tgz file from each version, after which its size is obtained through the process of checking the size of its folder. This data does not include the dependencies.
+## What is BELA's roadmap?

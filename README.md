@@ -52,7 +52,8 @@ Here's a quick setup to start training your own AI model with BELA.
     ]
     ```
 3. **Use the code examples**:  
-After installing, creating configurations, and creating datasets. You can run the following codes.  
+After installing, creating configurations, and creating datasets. You can run the following codes.
+
     1. **Import** ``@soteen/bela`` **to the project**:
     ```javascript
     import { BELA } from '@soteen/bela';

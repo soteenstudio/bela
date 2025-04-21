@@ -39,7 +39,7 @@ Here's a quick setup to start training your own AI model with BELA.
       },
       "autoIncrement": true, // Automatic upgrade
       "autoDelete": true, // Delete old versions automatically
-      "autoDeleteMax": 2, // Number of versions stored, oldest will be deleted
+      "autoDeleteMax": 2 // Number of versions stored, oldest will be deleted
     }
     ```
 2. **Creating a dataset**:

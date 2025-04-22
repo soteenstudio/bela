@@ -9,17 +9,18 @@
   <img src="https://img.shields.io/github/issues/soteenstudio/bela?style=flat-square">
 </div>
 
-# BELA: Binary Entropy Learning Architecture for AI Models
-BELA is an AI architecture that represents text using binary and leverages entropy for learning.
+![Banner](banner.jpg)
+
+BELA is an AI architecture that represents text using binary, leverages entropy for learning, and two-way prediction to create response.
+
 BELA itself stands for **Binary Entropy Learning Architecture**.
-## Who can use BELA?
-Anyone! Whether you're an AI researcher or just experimenting, you can use BELA to create your own models.
-### How to install?
+
+### Installation
 You can install BELA using npm with this command.
 ```sh
 npm install @soteen/bela
 ```
-### What are the steps after installation?
+### Next steps after installation
 Here's a quick setup to start training your own AI model with BELA.
 1. **Creating a configuration**:
 
@@ -133,7 +134,7 @@ After installing, creating configurations, and creating datasets. You can run th
 
 > **Caution**: We recommend that you store your configuration in a JSON file and your model password in a .env file.
 
-## How is the installation performance?
+## Installation Performance
 From version to version, BELA has installation differences that we can see in the following table.
 | Version    | Size    | Performance | Optimizations performed |
 |------------|---------|-------------|-------------------------|
@@ -143,7 +144,8 @@ From version to version, BELA has installation differences that we can see in th
 | v0.0.1-dev | 83.16kB | 4-8s        | Nothing |
 
 This data is obtained by extracting the .tgz file from each version, after which its size is obtained through the process of checking the size of its folder. This data does not include the dependencies.
-## What is BELA's roadmap?
+
+## Roadmap
 BELA has several roadmaps that we have achieved and have not achieved.
 
 - [x] Compatible with [CommonJS](https://nodejs.org/api/modules.html) and [ES Modules](https://nodejs.org/api/esm.html).
@@ -151,4 +153,4 @@ BELA has several roadmaps that we have achieved and have not achieved.
 - [x] Introducing the ``read()`` feature.
 - [x] Introducing the ``fineTune()`` feature.
 - [x] Introducing the security of the ``.belamodel`` feature.  
-[And others...](ROADMAP.md)
+[And others...](Roadmap.md)

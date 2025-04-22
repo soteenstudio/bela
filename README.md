@@ -144,3 +144,10 @@ From version to version, BELA has installation differences that we can see in th
 
 This data is obtained by extracting the .tgz file from each version, after which its size is obtained through the process of checking the size of its folder. This data does not include the dependencies.
 ## What is BELA's roadmap?
+BELA has several roadmaps that we have achieved and have not achieved.
+[ ] Introducing the ``move()`` feature.
+[ ] Introducing the ``read()`` feature.
+[ ] Introducing the ``fineTune()`` feature.
+[ ] Introducing the security of the ``.belamodel`` feature.
+[x] Making BELA a powerful architecture with binary learning.
+[And others...](ROADMAP.md)

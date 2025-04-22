@@ -36,3 +36,10 @@ Before you start contributing, make sure you have read the steps to contribute.
 
 6. **Create a Pull Request**:  
     Once the push is complete, open GitHub and go to the repository page that you forked. There will be a button to create a Pull Request (PR) from the branch that you created to the BELA repository. Click the button and fill in the PR description with a brief explanation of the changes you are making.
+
+## Code Style and Standards
+To maintain consistency across the project, please adhere to the following code style guidelines:
+- **Indentation**: Use 2 spaces for indentation.
+- **Type safety**: Avoid using ``any`` explicitly. Try to use more specific data types such as strings, numbers, or booleans.
+- **Naming Conventions**: Use ``camelCase`` for variables and function names. Use ``PascalCase`` for classes and constructors.
+- **Avoid Global Variables**: Always use local variables where possible.

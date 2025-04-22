@@ -154,5 +154,5 @@ BELA has several roadmaps that we have achieved and have not achieved.
 
 - [x] Introducing the security of the ``.belamodel`` feature.
 
-- [ ] Making BELA a powerful architecture with binary learning.
+- [ ] Making BELA a powerful architecture with binary learning.  
 [And others...](ROADMAP.md)

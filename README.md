@@ -146,13 +146,13 @@ This data is obtained by extracting the .tgz file from each version, after which
 ## What is BELA's roadmap?
 BELA has several roadmaps that we have achieved and have not achieved.
 
-[ ] Introducing the ``move()`` feature.
+- [x] Introducing the ``move()`` feature.
 
-[ ] Introducing the ``read()`` feature.
+- [x] Introducing the ``read()`` feature.
 
-[ ] Introducing the ``fineTune()`` feature.
+- [x] Introducing the ``fineTune()`` feature.
 
-[ ] Introducing the security of the ``.belamodel`` feature.
+- [x] Introducing the security of the ``.belamodel`` feature.
 
-[x] Making BELA a powerful architecture with binary learning.
+- [ ] Making BELA a powerful architecture with binary learning.
 [And others...](ROADMAP.md)

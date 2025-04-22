@@ -5,9 +5,13 @@ BELA has several roadmaps that we have achieved and have not achieved.
 - [x] Compatible with [CommonJS](https://nodejs.org/api/modules.html) and [ES Modules](https://nodejs.org/api/esm.html).
   - Released on: v0.0.4-dev
 - [x] Introducing the ``move()`` feature.
+  - Released on: v0.0.4-dev
 - [x] Introducing the ``read()`` feature.
+  - Released on: v0.0.4-dev
 - [x] Introducing the ``fineTune()`` feature.
+  - Released on: v0.0.4-dev
 - [x] Introducing the security of the ``.belamodel`` feature.
+  - Released on: v0.0.1-dev
 
 ## Not Achieved
 - [ ] Optimizing binary usage.

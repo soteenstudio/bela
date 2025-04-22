@@ -10,7 +10,7 @@ If you want to contribute, you must first fork this project. Click the Fork butt
 After forking, you should clone the project to your local computer. So you can start editing.
     ```bash
     git clone https://github.com/username/repository-name.git
-    ```
+    ```  
 Change ``username`` and ``repository-name`` to match your GitHub account name and the repository you forked.
 
 3. **Create a new branch**:  

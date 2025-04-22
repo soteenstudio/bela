@@ -56,7 +56,7 @@ After installing, creating configurations, and creating datasets. You can run th
 
     3.1. **Import** ``@soteen/bela`` **to the project**:
     ```javascript
-    import { BELA } from '@soteen/bela';
+    import { BELA } from "@soteen/bela";
     ```
     3.2. **Initialize BELA with the configuration**:
     ```javascript

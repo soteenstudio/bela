@@ -15,6 +15,8 @@ BELA is an AI architecture that represents text using binary, leverages entropy 
 
 BELA itself stands for **Binary Entropy Learning Architecture**.
 
+## Tutorials
+If you want to learn how to install and use BELA, you can follow the tutorial we provide.
 ### Installation
 You can install BELA using npm with this command.
 ```sh

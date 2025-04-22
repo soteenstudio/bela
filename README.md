@@ -1,12 +1,12 @@
 <div style="display: flex; flex-wrap: wrap; gap: 5px;">
   <img src="https://img.shields.io/badge/Node.js-12%2B-green?logo=node.js&style=flat-square">
-  <img src="https://img.shields.io/github/license/soteenstudio/bela?style=flat-square">
-  <img src="https://img.shields.io/npm/v/@soteen/bela?style=flat-square">
+  <a href="https://github.com/soteenstudio/bela/blob/main/LICENSE.txt"><img src="https://img.shields.io/github/license/soteenstudio/bela?style=flat-square"></a>
+  <a href="https://npmjs.org/package/@soteen/bela"><img src="https://img.shields.io/npm/v/@soteen/bela?style=flat-square"></a>
   <img src="https://img.shields.io/npm/dt/@soteen/bela?style=flat-square">
   <img src="https://img.shields.io/github/repo-size/soteenstudio/bela?style=flat-square">
   <img src="https://img.shields.io/github/contributors/soteenstudio/bela?style=flat-square">
   <img src="https://img.shields.io/github/stars/soteenstudio/bela?style=flat-square">
-  <img src="https://img.shields.io/github/issues/soteenstudio/bela?style=flat-square">
+  <a href="https://github.com/soteenstudio/bela/issues"><img src="https://img.shields.io/github/issues/soteenstudio/bela?style=flat-square"></a>
 </div>
 
 ![Banner](banner.jpg)
@@ -57,19 +57,19 @@ Here's a quick setup to start training your own AI model with BELA.
 3. **Use the code examples**:  
 After installing, creating configurations, and creating datasets. You can run the following codes.
 
-    3.1. **Import** ``@soteen/bela`` **to the project**:
+    3.1. **Import** ``@soteen/bela`` **to the project**
     ```javascript
     import { BELA } from "@soteen/bela";
     ```
-    3.2. **Initialize BELA with the configuration**:
+    3.2. **Initialize BELA with the configuration**
     ```javascript
     const model = new BELA(config);
     ```
-    3.3. **Train the model with the dataset**:
+    3.3. **Train the model with the dataset**
     ```javascript
     model.train(dataset);
     ```
-    3.4. **Save the trained model**:
+    3.4. **Save the trained model**
     ```javascript
     /** No auto-increment */
     model.save("model.belamodel", {
@@ -81,7 +81,7 @@ After installing, creating configurations, and creating datasets. You can run th
       password: password
     });
     ```
-    3.5. **Load the trained model**:
+    3.5. **Load the trained model**
     ```javascript
     /** No auto-increment */
     model.load("model.belamodel", {
@@ -93,7 +93,7 @@ After installing, creating configurations, and creating datasets. You can run th
       password: password
     });
     ```
-    3.6. **Move model to new/other file**:
+    3.6. **Move model to new/other file**
     ```javascript
     /** No auto-increment */
     model.move("old-model.belamodel", {
@@ -111,7 +111,7 @@ After installing, creating configurations, and creating datasets. You can run th
       password: newPassword
     });
     ```
-    3.7. **Read the contents of the** ``.belamodel`` **file**:
+    3.7. **Read the contents of the** ``.belamodel`` **file**
     ```javascript
     /** No auto-increment */
     console.log(model.read("model.belamodel", {
@@ -123,7 +123,7 @@ After installing, creating configurations, and creating datasets. You can run th
       password: password
     }));
     ```
-    3.8. **Make a prediction**:
+    3.8. **Make a prediction**
     ```javascript
     const predict = model.predict("Say this is example code.", {
       maxLength: 12,
@@ -147,6 +147,9 @@ From version to version, BELA has installation differences that we can see in th
 
 This data is obtained by extracting the .tgz file from each version, after which its size is obtained through the process of checking the size of its folder. This data does not include the dependencies.
 
+## Contribute
+If you haven't contributed yet, you should read how to [contribute](CONTRIBUTING.md) to this BELA project.
+
 ## Roadmap
 BELA has several roadmaps that we have achieved and have not achieved.
 
@@ -155,4 +158,4 @@ BELA has several roadmaps that we have achieved and have not achieved.
 - [x] Introducing the ``read()`` feature.
 - [x] Introducing the ``fineTune()`` feature.
 - [x] Introducing the security of the ``.belamodel`` feature.  
-[And others...](Roadmap.md)
+[And others...](https://github.com/soteenstudio/bela/blob/main/Roadmap.md)

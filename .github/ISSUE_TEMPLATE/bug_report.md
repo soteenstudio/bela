@@ -24,5 +24,6 @@ body:
     attributes:
       label: Harusnya gimana?
       placeholder: Jelasin perilaku yang lo harapin
+    validations:
       required: true
 ---

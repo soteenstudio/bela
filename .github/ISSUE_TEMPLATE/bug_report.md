@@ -1,3 +1,4 @@
+---
 name: Bug Report
 description: Laporkan bug yang lo temuin
 title: "[BUG] Judul singkat bug-nya"
@@ -23,3 +24,4 @@ body:
     attributes:
       label: Harusnya gimana?
       placeholder: Jelasin perilaku yang lo harapin
+---

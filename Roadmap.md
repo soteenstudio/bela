@@ -18,4 +18,5 @@ BELA has several roadmaps that we have achieved and have not achieved.
 - [ ] Strengthening binary-based learning systems.
 - [ ] Strengthening the prediction system.
 
-> **Note**: Roadmap may change over time.
+> [!NOTE]
+> Roadmap may change over time.

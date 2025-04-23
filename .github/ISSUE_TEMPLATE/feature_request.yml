@@ -1,0 +1,44 @@
+name: Request a feature
+description: Request new features or improvement ideas.
+title: "[FEATURE] Title of your feature"
+labels: [enhancement]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping develop this project! Explain the features you want as clearly as possible.
+
+  - type: input
+    id: feature-summary
+    attributes:
+      label: Feature summary
+      placeholder: Explain this feature briefly
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why is this feature important?
+      placeholder: Describe the problem that this feature can solve
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: The solution or implementation you envision
+      placeholder: Have an idea how to implement it? You can share it here
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Features never existed before
+        - label: I've searched and can't find the same issue
+        - label: Ready to help if you have time (optional)

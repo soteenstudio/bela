@@ -22,6 +22,6 @@ body:
     id: expected
     attributes:
       label: What should it be?
-      placeholder: Jelasin perilaku yang lo harapin
+      placeholder: Describe the behavior you expect.
     validations:
       required: true

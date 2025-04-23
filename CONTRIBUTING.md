@@ -1,8 +1,9 @@
 # Contribution Guidelines
-Thank you for your interest in contributing to the project!  
-Before you start contributing, make sure you have read the steps to contribute.
+Thank you for your interest in contributing to this project!
+Before you start contributing, make sure you have read the guidelines we have provided.
 
 ## Steps to contribute
+To understand the cross-project contribution flow, please follow the following step-by-step contribution guide:
 1. **Fork repository**:  
     If you want to contribute, you must first fork this project. Click the Fork button on the repository page to create a copy of this repository in your GitHub account.
 
@@ -35,7 +36,7 @@ Before you start contributing, make sure you have read the steps to contribute.
     Replace ``branch-name`` with the name of the branch you just created.
 
 6. **Create a Pull Request**:  
-    Once the push is complete, open GitHub and go to the repository page that you forked. There will be a button to create a Pull Request (PR) from the branch that you created to the BELA repository. Click the button and fill in the PR description with a brief explanation of the changes you are making.
+    Once the push is complete, open GitHub and go to the repository page that you forked. There will be a button to create a Pull Request (PR) from the branch that you created to the repository. Click the button and fill in the PR description with a brief explanation of the changes you are making.
 
 ## Code Style and Standards
 To maintain consistency across the project, please adhere to the following code style guidelines:

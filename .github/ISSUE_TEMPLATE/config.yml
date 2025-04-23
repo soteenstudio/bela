@@ -7,7 +7,7 @@ contact_links:
 issue_templates:
   - name: Report a bug
     description: You can use this template if you find a bug.
-    file: bug_report.md
+    file: bug_report.yml
   - name: Feature Request
     description: Minta fitur baru atau ide peningkatan.
     file: feature_request.md

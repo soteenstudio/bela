@@ -1,4 +1,3 @@
----
 name: Lapor Bug
 description: Gunakan ini kalau nemu bug
 title: "[BUG] Judul singkat bug-nya"
@@ -26,4 +25,3 @@ body:
       placeholder: Jelasin perilaku yang lo harapin
     validations:
       required: true
----

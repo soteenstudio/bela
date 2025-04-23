@@ -134,8 +134,8 @@ After installing, creating configurations, and creating datasets. You can run th
     console.log(predict);
     ```
 
-> [!CAUTION]
-> We recommend that you store your configuration in a JSON file and your model password in a .env file.
+    > [!CAUTION]
+    > We recommend that you store your configuration in a JSON file and your model password in a .env file.
 
 ## Installation Performance
 From version to version, BELA has installation differences that we can see in the following table.

@@ -1,6 +1,6 @@
 ---
-name: Bug Report
-description: Laporkan bug yang lo temuin
+name: Lapor Bug
+description: Gunakan ini kalau nemu bug
 title: "[BUG] Judul singkat bug-nya"
 labels: [bug]
 assignees: []
@@ -24,4 +24,5 @@ body:
     attributes:
       label: Harusnya gimana?
       placeholder: Jelasin perilaku yang lo harapin
+      required: true
 ---

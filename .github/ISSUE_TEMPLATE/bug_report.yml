@@ -1,6 +1,6 @@
-name: Lapor Bug
-description: Gunakan ini kalau nemu bug
-title: "[BUG] Judul singkat bug-nya"
+name: Report a bug
+description: You can use this template if you find a bug.
+title: "[BUG] Short title of the bug"
 labels: [bug]
 assignees: []
 
@@ -8,20 +8,20 @@ body:
   - type: markdown
     attributes:
       value: |
-        Makasih udah bantu laporan bug!
+        Thanks for helping with the bug report!
 
   - type: input
     id: what-happened
     attributes:
-      label: Apa yang terjadi?
-      placeholder: Jelasin bug-nya...
+      label: What happened?
+      placeholder: Explain the bug...
     validations:
       required: true
 
   - type: input
     id: expected
     attributes:
-      label: Harusnya gimana?
+      label: What should it be?
       placeholder: Jelasin perilaku yang lo harapin
     validations:
       required: true

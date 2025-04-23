@@ -148,10 +148,10 @@ From version to version, BELA has installation differences that we can see in th
 This data is obtained by extracting the .tgz file from each version, after which its size is obtained through the process of checking the size of its folder. This data does not include the dependencies.
 
 ## Contribute
-If you haven't contributed yet, you should read how to [contribute](CONTRIBUTING.md) to this BELA project.
+If you haven't contributed yet, you should read how to [contribute](CONTRIBUTING.md) to this project.
 
 ## Roadmap
-BELA has several roadmaps that we have achieved and have not achieved.
+This project has several roadmaps that we have achieved and have not achieved.
 
 - [x] Compatible with [CommonJS](https://nodejs.org/api/modules.html) and [ES Modules](https://nodejs.org/api/esm.html).
 - [x] Introducing the ``move()`` feature.

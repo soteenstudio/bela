@@ -1,5 +1,5 @@
 name: Report a bug
-description: You can use this template if you find a bug.
+description: Report any bugs you encounter.
 title: "[BUG] Short title of the bug"
 labels: [bug]
 assignees: []
@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping with the bug report!
+        Thanks for helping with the bug report! Explain the bugs you want as clearly as possible.
 
   - type: input
     id: what-happened

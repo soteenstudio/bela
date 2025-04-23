@@ -1,9 +1,13 @@
 blank_issues_enabled: false
 issue_templates:
   - name: Report a bug
-    description: You can use this template if you find a bug.
+    description: Report any bugs you encounter
     file: bug_report.yml
     
   - name: Request a feature
-    description: Request new features or improvement ideas.
+    description: Request new features or improvement ideas
     file: feature_request.yml
+    
+  - name: Ask a question
+    description: Ask any questions you want to ask
+    file: question.yml

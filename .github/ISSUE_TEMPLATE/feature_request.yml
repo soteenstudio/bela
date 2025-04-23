@@ -1,7 +1,7 @@
 name: Request a feature
-description: Request new features or improvement ideas.
-title: "[FEATURE] Title of your feature"
-labels: [enhancement]
+description: Request new features or improvement ideas
+title: "[FEATURE] Short title of your feature"
+labels: [request]
 assignees: []
 
 body:

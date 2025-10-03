@@ -1,14 +1,16 @@
+import { Layer } from "../core/neuralNet/";
+
 export const modelData: ModelData = {
   parameters: {
-    epochs: 0,
-    learningRate: 0,
-    momentum: 0,
-    randomness: 0,
-    nGramOrder: 0,
-    layers: [0, 0, 0]
-  },
-  learnedPatterns: [],
-  binaryPatterns: [],
-  frequentPatterns: [],
-  reverseNGrams: {}
+    training: {
+      epochs: 0,
+      learningRate: 0,
+      batchSize: 0,
+      layers: [] as Layer[]
+    },
+    inference: {
+      temp: 0,
+      topP: 0
+    }
+  }
 }

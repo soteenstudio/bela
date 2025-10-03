@@ -1,5 +1,9 @@
-declare interface BinaryPatternValue {
-  distribution: { [key: string]: number }; 
-  frequency: number; 
-  output: string;
+declare global {
+  interface BinaryPatternValue {
+    distribution: { [key: string]: number }; 
+    frequency: number; 
+    output: string;
+  }
 }
+
+export {};

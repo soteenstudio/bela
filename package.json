@@ -3,22 +3,27 @@
   "version": "0.0.4-dev",
   "description": "This is machine learning using BELA.",
   "type": "module",
-  "main": "./build/index.min.cjs",
-  "module": "./build/index.min.mjs",
+  "main": "./dist/index.min.cjs",
+  "module": "./dist/index.min.mjs",
   "exports": {
     ".": {
-      "require": "./build/index.min.cjs",
-      "import": "./build/index.min.mjs"
+      "require": "./dist/index.min.cjs",
+      "import": "./dist/index.min.mjs"
     }
   },
-  "typings": "build/typings.d.ts",
+  "typings": "./dist/types/typings.d.ts",
   "scripts": {
-    "build": "npm run build:compile && npm run build:bundling-esm && npm run build:bundling-cjs",
-    "build:compile": "tsc",
-    "build:bundling-esm": "esbuild dist/index.js --bundle --minify --platform=node --format=esm --outfile=build/index.min.mjs",
-    "build:bundling-cjs": "esbuild dist/index.js --bundle --minify --platform=node --format=cjs --outfile=build/index.min.cjs",
-    "test1": "clear && ts-node ./tests/test2.ts",
-    "test2": "clear && node ./tests/model.js"
+    "ready": "npm pack",
+    "build": "node ./esbuild.config.js",
+    "build:bundling-dts": "dts-bundle --name '@soteen/bela' --main typings/index.d.ts --baseDir typings/ --out ../dist/types/typings.d.ts --verbose",
+    "typecheck": "tsc",
+    "checkcount": "find src -type f | wc -l",
+    "jest": "node ./node_modules/jest/bin/jest.js",
+    "test:training": "node ./tests/script/training.js",
+    "test:finetune": "node ./tests/script/finetune.js",
+    "test:inference": "node ./tests/script/inference.js",
+    "test:move": "node ./tests/script/move.js",
+    "test:read": "node ./tests/script/read.js"
   },
   "keywords": [
     "machine",
@@ -28,9 +33,15 @@
   "author": "SoTeen Studio",
   "license": "MIT",
   "devDependencies": {
+    "@soteen/bela": "^0.0.2-dev",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.13.4",
     "dotenv": "^16.5.0",
-    "i": "^0.3.7"
+    "esbuild": "^0.25.5",
+    "i": "^0.3.7",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.3",
+    "ts-node": "^10.9.2"
   },
   "dependencies": {
     "chalk": "^5.4.1"

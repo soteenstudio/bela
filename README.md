@@ -94,7 +94,7 @@ After installing, creating configurations, and creating datasets. You can run th
       });
       
       /** With auto-increment */
-      await model.saveSync("model", {
+      model.saveSync("model", {
         password: password
       });
       ```

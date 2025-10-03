@@ -86,6 +86,18 @@ After installing, creating configurations, and creating datasets. You can run th
       
       await main();
       ```
+    - Synchronous
+      ```javascript
+      /** No auto-increment */
+      model.saveSync("model.belamodel", {
+        password: password
+      });
+      
+      /** With auto-increment */
+      await model.saveSync("model", {
+        password: password
+      });
+      ```
     3.5. **Load the trained model**:
     ```javascript
     async function main() {

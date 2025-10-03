@@ -99,51 +99,104 @@ After installing, creating configurations, and creating datasets. You can run th
       });
       ```
     3.5. **Load the trained model**:
-    ```javascript
-    async function main() {
+    - Asynchronous
+      ```javascript
+      async function main() {
+        /** No auto-increment */
+        await model.load("model.belamodel", {
+          password: password
+        });
+        
+        /** With auto-increment */
+        await model.load("model", {
+          password: password
+        });
+      }
+      
+      await main();
+      ```
+    - Synchronous
+      ```javascript
       /** No auto-increment */
-      await model.load("model.belamodel", {
+      model.loadSync("model.belamodel", {
         password: password
       });
       
       /** With auto-increment */
-      await model.load("model", {
+      model.loadSync("model", {
         password: password
       });
-    }
-    
-    await main();
-    ```
+      ```
     3.6. **Move model to new/other file**:
-    ```javascript
-    /** No auto-increment */
-    model.move("old-model.belamodel", {
-      password: oldPassword
-    },
-    "new-model.belamodel", {
-      password: newPassword
-    });
-    
-    /** With auto-increment */
-    model.move("old-model", {
-      password: oldPassword
-    },
-    "new-model", {
-      password: newPassword
-    });
-    ```
+    - Asynchronous
+      ```javascript
+      async function main() {
+        /** No auto-increment */
+        await model.move("old-model.belamodel", {
+          password: oldPassword
+        },
+        "new-model.belamodel", {
+          password: newPassword
+        });
+        
+        /** With auto-increment */
+        await model.move("old-model", {
+          password: oldPassword
+        },
+        "new-model", {
+          password: newPassword
+        });
+      }
+      
+      await main();
+      ```
+    - Synchronous
+      ```javascript
+      /** No auto-increment */
+      model.moveSync("old-model.belamodel", {
+        password: oldPassword
+      },
+      "new-model.belamodel", {
+        password: newPassword
+      });
+      
+      /** With auto-increment */
+      model.moveSync("old-model", {
+        password: oldPassword
+      },
+      "new-model", {
+        password: newPassword
+      });
+      ```
     3.7. **Read the contents of the** ``.belamodel`` **file**:
-    ```javascript
-    /** No auto-increment */
-    console.log(model.read("model.belamodel", {
-      password: password
-    }));
-    
-    /** With auto-increment */
-    console.log(model.read("model", {
-      password: password
-    }));
-    ```
+    - Asynchronous
+      ```javascript
+      async function main() {
+        /** No auto-increment */
+        console.log(await model.read("model.belamodel", {
+          password: password
+        }));
+        
+        /** With auto-increment */
+        console.log(await model.read("model", {
+          password: password
+        }));
+      }
+      
+      await main();
+      ```
+    - Synchronous
+      ```javascript
+      /** No auto-increment */
+      console.log(model.readSync("model.belamodel", {
+        password: password
+      }));
+      
+      /** With auto-increment */
+      console.log(model.readSync("model", {
+        password: password
+      }));
+      ```
     3.8. **Make a prediction**:
     ```javascript
     const predict = model.predict("Say this is example code.", {

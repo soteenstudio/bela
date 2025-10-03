@@ -70,22 +70,22 @@ After installing, creating configurations, and creating datasets. You can run th
     model.train(dataset);
     ```
     3.4. **Save the trained model**:
-      4.1 **Async**:
-      ```javascript
-      async function main() {
-        /** No auto-increment */
-        await model.save("model.belamodel", {
-          password: password
-        });
-        
-        /** With auto-increment */
-        await model.save("model", {
-          password: password
-        });
-      }
+    - Asynchronous
+    ```javascript
+    async function main() {
+      /** No auto-increment */
+      await model.save("model.belamodel", {
+        password: password
+      });
       
-      await main();
-      ```
+      /** With auto-increment */
+      await model.save("model", {
+        password: password
+      });
+    }
+    
+    await main();
+    ```
     3.5. **Load the trained model**:
     ```javascript
     async function main() {

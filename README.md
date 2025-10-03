@@ -71,27 +71,35 @@ After installing, creating configurations, and creating datasets. You can run th
     ```
     3.4. **Save the trained model**:
     ```javascript
-    /** No auto-increment */
-    model.save("model.belamodel", {
-      password: password
-    });
+    async function main() {
+      /** No auto-increment */
+      await model.save("model.belamodel", {
+        password: password
+      });
+      
+      /** With auto-increment */
+      await model.save("model", {
+        password: password
+      });
+    }
     
-    /** With auto-increment */
-    model.save("model", {
-      password: password
-    });
+    await main();
     ```
     3.5. **Load the trained model**:
     ```javascript
-    /** No auto-increment */
-    model.load("model.belamodel", {
-      password: password
-    });
+    async function main() {
+      /** No auto-increment */
+      await model.load("model.belamodel", {
+        password: password
+      });
+      
+      /** With auto-increment */
+      await model.load("model", {
+        password: password
+      });
+    }
     
-    /** With auto-increment */
-    model.load("model", {
-      password: password
-    });
+    await main();
     ```
     3.6. **Move model to new/other file**:
     ```javascript

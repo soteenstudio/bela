@@ -1,6 +1,7 @@
 build/
 dist/
-tests/
+tests/scripts
+tests/datasets
 node_modules/
 *.json
 !package.json

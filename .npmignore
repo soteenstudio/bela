@@ -1,8 +1,7 @@
 .github/
 src/
 typings/
-tests/scripts
-tests/datasets
+tests/
 *.json
 !package.json
 !package-lock.json

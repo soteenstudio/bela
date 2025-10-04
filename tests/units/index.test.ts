@@ -1,5 +1,5 @@
-import { BELA } from "../../src/index"; // pastiin ini gak pakai `.ts` di akhir
-import { Type, Code } from "../../src/utils/belaMessage";
+import { BELA } from "../../dist/index.min.mjs"; // pastiin ini gak pakai `.ts` di akhir
+import { Type, Code } from "../../src/utils/message/belaMessage";
 
 describe("BELA.train", () => {
   let model: BELA;
@@ -38,6 +38,6 @@ describe("BELA.train", () => {
     }).not.toThrow();
 
     // Optional: cek apakah model berhasil dilatih
-    expect((model as any).isModel).toBe(true);
+    expect(model.isModel).toBe(true);
   });
 });
